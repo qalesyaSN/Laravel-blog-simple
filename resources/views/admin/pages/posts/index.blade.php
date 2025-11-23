@@ -5,7 +5,7 @@
         <div class=""><a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary mb-3">Tambah Artikel</a>
         </div>
     </div>
-
+    <x-alert/>
     <div class="table-responsive">
         <table class="table">
             <th>#</th>
@@ -22,13 +22,13 @@
                     <img style="border-radius:5px" src="/storage/{{ $post->thumbnail }}" width="50px" />
                       </td>
                     <td>{{ $post->title }}</td>
-                    <td>{{ Str::limit(strip_tags($post->content), 10, '..') }}</td>
+                    <td>{{ Str::limit(strip_tags($post->content), 20, '..') }}</td>
                     <td>{{ $post->category ->name}}</td>
                     <td>{{ $post->author->name }}</td>
-                    <td>{{ $post->created_at->format('d m y') }}</td>
+                    <td>{{ $post->created_at->format('d M y') }}</td>
                     <td>
                         <a href="" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
-                        <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" method="POST">
+                        <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" method="POST" style="display: inline-block" onsubmit="return confirm('Are you sure you want to delete it?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
