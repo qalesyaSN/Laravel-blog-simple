@@ -27,11 +27,11 @@
                     <td>{{ $post->author->name }}</td>
                     <td>{{ $post->created_at->format('d m y') }}</td>
                     <td>
-                        <a href="" class="btn btn-sm btn-danger">♦</a>
+                        <a href="" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
                         <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-warning">♦</button>
+                            <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                         </form>
                     </td>
                 </tr>
