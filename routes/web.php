@@ -41,6 +41,10 @@ Route::middleware(['auth'])
         
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
+        Route::post('/posts/edit/{id}', [PostController::class, 'edit'])->name('pages.posts.edit');
+        
+        // URL: /admin/posts/create
+        // Route Name: admin.posts.create
         Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])->name('pages.posts.destroy');
         
         ## Untuk rute setting

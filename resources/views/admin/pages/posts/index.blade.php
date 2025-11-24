@@ -1,49 +1,110 @@
 @extends('layouts.app')
 @section('title', 'List Post')
+
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-end">
-        <div class=""><a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary mb-3">Add Post</a>
+
+{{-- Header & Tombol Add --}}
+<div class="d-flex justify-content-between align-items-center mb-4">
+<h4 class="fw-bold mb-0">Postingan</h4>
+<a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary">
+<i class="bi bi-plus-lg me-1"></i> Add Post
+</a>
+</div>
+
+<x-alert/>
+
+{{-- Container List (Ganti Table jadi Card List) --}}
+<div class="card">
+<div class="list-group list-group-flush">
+@forelse($posts as $post)
+<div class="list-group-item p-3 border-bottom">
+    
+    {{-- 1. GAMBAR (Di luar Row biar fleksibel) --}}
+    {{-- d-md-none: Sembunyikan gambar besar ini di Desktop --}}
+    <div class="d-md-none mb-3">
+        <img src="/storage/{{ $post->thumbnail }}" 
+             class="rounded w-100 border border-dark" 
+             style="height: 200px; object-fit: cover;">
+    </div>
+
+    {{-- 2. KONTEN & TOMBOL (Masuk dalam Row) --}}
+    <div class="row align-items-center g-3">
+
+        {{-- 3. THUMBNAIL DESKTOP (Muncul cuma di MD ke atas) --}}
+        <div class="col-md-auto d-none d-md-block">
+            <img src="/storage/{{ $post->thumbnail }}" 
+                 class="rounded border border-dark" 
+                 style="width: 70px; height: 70px; object-fit: cover;">
         </div>
+
+        {{-- 4. KONTEN TEXT --}}
+        {{-- col-12 di mobile, col-md di desktop --}}
+        <div class="col-12 col-md">
+            <h5 class="mb-1 fw-bold text-truncate">
+                <a href="#" class="text-decoration-none text-dark">
+                    {{ $post->title }}
+                </a>
+            </h5>
+            
+            {{-- Meta Data --}}
+            <div class="small text-muted d-flex flex-wrap gap-2 align-items-center">
+                
+                {{-- Status Badge --}}
+                <span class="badge rounded-pill {{ $post->status == 'Published' ? 'bg-success' : 'bg-secondary' }}">
+                    {{ $post->status }}
+                </span>
+
+                {{-- Info Lain --}}
+                <span><i class="bi bi-folder2-open"></i> {{ $post->category->name }}</span>
+                <span class="d-none d-md-inline">|</span> {{-- Separator --}}
+                <span><i class="bi bi-person"></i> {{ $post->author->name }}</span>
+                <span class="d-none d-md-inline">|</span>
+                <span><i class="bi bi-calendar3"></i> {{ $post->created_at->format('d M y') }}</span>
+            </div>
+        </div>
+
+        {{-- 5. TOMBOL ACTION --}}
+        {{-- col-12 di mobile, col-md-auto di desktop --}}
+        <div class="col-12 col-md-auto">
+            <div class="d-flex gap-2 justify-content-end">
+                {{-- Tombol Edit --}}
+                <a href="{{ route('admin.pages.posts.edit', $post->id) }}" 
+                   class="btn btn-sm btn-warning"
+                   title="Edit">
+                    <i class="bi bi-pencil"></i>
+                </a>
+
+                {{-- Tombol Delete --}}
+                <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" 
+                      method="POST" 
+                      class="d-inline" 
+                      onsubmit="return confirm('Yakin hapus?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger" title="Delete">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
-    <x-alert/>
-    <div class="table-responsive">
-        <table class="table">
-            <th>#</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Category</th>
-            <th>Author</th>
-            <th>Date</th>
-            <th>Action</th>
-            <tbody>
-                @forelse($posts as $post)
-                <tr>
-                    <td>
-                    <img style="border-radius:5px" src="/storage/{{ $post->thumbnail }}" width="50px" />
-                      </td>
-                    <td>{{ $post->title }}</td>
-                    <td>{{ Str::limit(strip_tags($post->content), 20, '..') }}</td>
-                    <td>{{ $post->category ->name}}</td>
-                    <td>{{ $post->author->name }}</td>
-                    <td>{{ $post->created_at->format('d M y') }}</td>
-                    <td>
-                        <a href="" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
-                        <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" method="POST" style="display: inline-block" onsubmit="return confirm('Are you sure you want to delete it?');">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </form>
-                    </td>
-                </tr>
-                @empty
-                <tr>
-                    <td colspan="7"><center><i class="text-center">There are no articles yet  !</i></center></td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
-    </div>
-    {{ $posts->links('vendor.pagination.bootstrap-5') }}
+</div>
+@empty
+{{-- Kosong --}}
+<div class="text-center p-5">
+    <h4>Belum ada postingan</h4>
+</div>
+@endforelse
+
+
+</div>
+</div>
+
+{{-- Pagination --}}
+<div class="mt-4">
+{{ $posts->links('vendor.pagination.bootstrap-5') }}
+</div>
 </div>
 @endsection
