@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Add Post')
+
 @section('content')
 <div class="container">
     <!--x-alert /-->
@@ -38,7 +38,7 @@
         <div class="form-group mb-3">
             <label for="setting_key">Category</label>
             <select name="category_id" class="form-control @error('category_id') is-invalid @enderror">
-                <option>Select Category</option>
+                <option>Pilih Kategori </option>
                 @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach

@@ -1,9 +1,8 @@
 @extends('layouts.app')
-@section('title', 'List Post')
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-end">
-        <div class=""><a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary mb-3">Add Post</a>
+        <div class=""><a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary mb-3">Tambah Artikel</a>
         </div>
     </div>
     <x-alert/>
@@ -38,12 +37,11 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7"><center><i class="text-center">There are no articles yet  !</i></center></td>
+                    <td colspan="7"><center><i class="text-center">Tidak ada data !</i></center></td>
                 </tr>
                 @endforelse
             </tbody>
         </table>
     </div>
-    {{ $posts->links('vendor.pagination.bootstrap-5') }}
 </div>
 @endsection
