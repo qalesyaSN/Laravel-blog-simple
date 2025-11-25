@@ -24,7 +24,7 @@
     {{-- d-md-none: Sembunyikan gambar besar ini di Desktop --}}
     <div class="d-md-none mb-3">
         <img src="/storage/{{ $post->thumbnail }}" 
-             class="rounded w-100 border border-dark" 
+             class="w-100 b-img" 
              style="height: 200px; object-fit: cover;">
     </div>
 
