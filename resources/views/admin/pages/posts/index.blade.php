@@ -84,9 +84,9 @@
     </div>
 </div>
 @empty
-{{-- Kosong --}}
+
 <div class="text-center p-5">
-    <h4>Belum ada postingan</h4>
+    <h4>No posts yet!</h4>
 </div>
 @endforelse
 
