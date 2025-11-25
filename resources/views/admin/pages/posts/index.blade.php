@@ -67,7 +67,7 @@
                     <i class="bi bi-pencil"></i>
                 </a>
 
-                {{-- Tombol Delete --}}
+                {{-- Tombol Deletess --}}
                 <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" 
                       method="POST" 
                       class="d-inline" 
