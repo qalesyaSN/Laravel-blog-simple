@@ -66,7 +66,7 @@ Route::middleware(['auth'])
         
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
-        Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])->name('pages.posts.destroy');
+        Route::delete('/categories/delete/{id}', [CategoryController::class, 'destroy'])->name('pages.categories.destroy');
         
         ## Untuk rute setting
         // URL: /admin/posts
