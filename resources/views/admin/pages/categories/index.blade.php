@@ -6,7 +6,7 @@
         </div>
     </div>
     <x-alert/>
-    <div class="table-responsive">
+    <div class="">
         <table class="table">
             <th>Title</th>
             <th>Status </th>
