@@ -7,7 +7,7 @@
     </div>
     <x-alert/>
     <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <table class="table">
             <th>Title</th>
             <th>Status </th>
@@ -36,7 +36,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <table class="table">
             <th>Title</th>
             <th>Status </th>
