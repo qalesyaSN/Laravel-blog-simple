@@ -34,7 +34,7 @@
         {{-- 3. THUMBNAIL DESKTOP (Muncul cuma di MD ke atas) --}}
         <div class="col-md-auto d-none d-md-block">
             <img src="/storage/{{ $post->thumbnail }}" 
-                 class="rounded border border-dark" 
+                 class="b-img" 
                  style="width: 70px; height: 70px; object-fit: cover;">
         </div>
 
