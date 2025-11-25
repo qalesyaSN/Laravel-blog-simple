@@ -6,6 +6,7 @@
 
 {{-- Header & Tombol Add --}}
 <div class="d-flex justify-content-between align-items-center mb-4">
+<h4>Post</h4>
 <a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary">
 <i class="bi bi-plus-lg me-1"></i> Add Post
 </a>

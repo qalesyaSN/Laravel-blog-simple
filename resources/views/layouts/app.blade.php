@@ -57,7 +57,7 @@
                             <a href="{{ route('admin.posts.index') }}" class="nav-link">Artikel</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.settings.index') }}" class="nav-link">Kategori</a>
+                            <a href="{{ route('admin.categories.index') }}" class="nav-link">Kategori</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.settings.index') }}" class="nav-link">Pengaturan</a>

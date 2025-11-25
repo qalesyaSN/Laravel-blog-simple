@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SettingController;
 
 Auth::routes([
@@ -42,6 +43,26 @@ Route::middleware(['auth'])
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
         Route::post('/posts/edit/{id}', [PostController::class, 'edit'])->name('pages.posts.edit');
+        
+        // URL: /admin/posts/create
+        // Route Name: admin.posts.create
+        Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])->name('pages.posts.destroy');
+        
+        // URL: /admin/posts
+        // Route Name: admin.posts.index
+        Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+        
+        // URL: /admin/posts/create
+        // Route Name: admin.posts.create
+        Route::get('/categories/create', [CategoryController::class, 'create'])->name('pages.categories.create');
+        
+        // URL: /admin/posts/create
+        // Route Name: admin.posts.create
+        Route::post('/categories/store', [CategoryController::class, 'store'])->name('pages.categories.store');
+        
+        // URL: /admin/posts/create
+        // Route Name: admin.posts.create
+        Route::post('/categories/edit/{id}', [CategoryController::class, 'edit'])->name('pages.categories.edit');
         
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
