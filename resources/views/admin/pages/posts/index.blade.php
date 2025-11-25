@@ -94,7 +94,6 @@
 </div>
 </div>
 
-{{-- Pagination --}}
 <div class="mt-4">
 {{ $posts->links('vendor.pagination.bootstrap-5') }}
 </div>
