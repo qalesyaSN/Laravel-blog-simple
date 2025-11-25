@@ -6,7 +6,6 @@
 
 {{-- Header & Tombol Add --}}
 <div class="d-flex justify-content-between align-items-center mb-4">
-<h4 class="fw-bold mb-0">Postingan</h4>
 <a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary">
 <i class="bi bi-plus-lg me-1"></i> Add Post
 </a>
@@ -14,32 +13,25 @@
 
 <x-alert/>
 
-{{-- Container List (Ganti Table jadi Card List) --}}
 <div class="card">
 <div class="list-group list-group-flush">
 @forelse($posts as $post)
 <div class="list-group-item p-3 border-bottom">
     
-    {{-- 1. GAMBAR (Di luar Row biar fleksibel) --}}
-    {{-- d-md-none: Sembunyikan gambar besar ini di Desktop --}}
     <div class="d-md-none mb-3">
         <img src="/storage/{{ $post->thumbnail }}" 
              class="w-100 b-img" 
              style="height: 200px; object-fit: cover;">
     </div>
 
-    {{-- 2. KONTEN & TOMBOL (Masuk dalam Row) --}}
     <div class="row align-items-center g-3">
 
-        {{-- 3. THUMBNAIL DESKTOP (Muncul cuma di MD ke atas) --}}
         <div class="col-md-auto d-none d-md-block">
             <img src="/storage/{{ $post->thumbnail }}" 
                  class="b-img" 
                  style="width: 70px; height: 70px; object-fit: cover;">
         </div>
 
-        {{-- 4. KONTEN TEXT --}}
-        {{-- col-12 di mobile, col-md di desktop --}}
         <div class="col-12 col-md">
             <h5 class="mb-1 fw-bold text-truncate">
                 <a href="#" class="text-decoration-none text-dark">
