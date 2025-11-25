@@ -2,16 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SettingController;
 
 Auth::routes([
+    'login' => false,
     'register' => true,
     'reset' => false,
     'verify' => false
     ]);
+    
+Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/admin/login', [LoginController::class, 'login']);
 
 Route::get('/', function () {
     return view('welcome');
