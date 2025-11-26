@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-end">
-        <div class=""><a href="{{ route('admin.pages.categories.create') }}" class="btn btn-primary mb-3">Tambah Artikel</a>
-        </div>
-    </div>
     <x-alert/>
     <div class="row">
     <div class="col-md-6">
