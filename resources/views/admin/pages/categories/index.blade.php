@@ -48,7 +48,7 @@
                 </select>
             </div>
             <div class="">
-                <button type="submit" class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-primary">Add</button>
             </div>
         </form>
     </div>
