@@ -24,6 +24,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('admin.pages.categories.index');
     }
 
     /**
