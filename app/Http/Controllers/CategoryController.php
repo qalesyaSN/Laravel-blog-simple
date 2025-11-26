@@ -42,10 +42,17 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index')->with('success', 'Berhasil tambah kategori');
     }
     
-    public function notfound()
+    public function updateStatus(Request $request, $id)
     {
         //
-        return to_route('admin.categories.index');
+        $category = Category::findOrFail($id);
+        $category->status = $request->status == 'true' ? 'Active' : 'Nonactive';
+        $category->save();
+        return response()->json([
+            'success' => true,
+            'message' => 'Sukses',
+            'new_status' => $category->status,
+            ]);
     }
     
     /**
