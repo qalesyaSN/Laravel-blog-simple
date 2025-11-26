@@ -30,7 +30,7 @@ Route::post('/admin/login', [LoginController::class, 'login']);
 
 // Halaman Depan (Public)
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('/detail-post', function() {
