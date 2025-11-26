@@ -41,13 +41,20 @@ class CategoryController extends Controller
         
         return redirect()->route('admin.categories.index')->with('success', 'Berhasil tambah kategori');
     }
-
+    
+    public function notfound()
+    {
+        //
+        return to_route('admin.categories.index');
+    }
+    
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
         //
+        return to_route('admin.categories.index');
     }
 
     /**

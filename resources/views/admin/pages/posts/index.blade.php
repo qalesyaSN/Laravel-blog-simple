@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-end">
-        <div class=""><a href="{{ route('admin.pages.posts.create') }}" class="btn btn-primary mb-3"><i class="bi bi-plus-lg me-1"></i> Add Post</a>
+        <div class=""><a href="{{ route('admin.posts.create') }}" class="btn btn-primary mb-3"><i class="bi bi-plus-lg me-1"></i> Add Post</a>
         </div>
     </div>
 
