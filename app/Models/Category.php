@@ -15,6 +15,15 @@ class Category extends Model
         'status'
         ];
     
+    protected static function booted() {
+        static::deleting(function($category) {
+            $category->posts()->update([
+                'category_id' => null,
+                'status'      => 'Archived'
+                ]);
+        });
+    }
+    
     public function post() {
         return $this->hasMany(Post::class);
     }
