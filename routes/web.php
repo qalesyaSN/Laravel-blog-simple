@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Import Controller
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
@@ -29,9 +30,7 @@ Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('log
 Route::post('/admin/login', [LoginController::class, 'login']);
 
 // Halaman Depan (Public)
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', [HomepageController::class, 'index'])->name('homepage');
 
 Route::get('/detail-post', function() {
     return view('detail-post');
