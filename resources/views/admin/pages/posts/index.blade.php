@@ -59,14 +59,14 @@
         <div class="col-12 col-md-auto">
             <div class="d-flex gap-2 justify-content-end">
                 {{-- Tombol Edit --}}
-                <a href="{{ route('admin.pages.posts.edit', $post->id) }}" 
+                <a href="{{ route('admin.posts.edit', $post->id) }}" 
                    class="btn btn-sm btn-warning"
                    title="Edit">
                     <i class="bi bi-pencil"></i>
                 </a>
 
                 {{-- Tombol Deletess --}}
-                <form action="{{ route('admin.pages.posts.destroy', $post->id) }}" 
+                <form action="{{ route('admin.posts.destroy', $post->id) }}" 
                       method="POST" 
                       class="d-inline" 
                       onsubmit="return confirm('Yakin hapus?');">

@@ -18,7 +18,7 @@
       </div></td>
                     <td>
                         
-                        <form action="{{ route('admin.pages.categories.destroy', $category->id) }}" method="POST" style="display: inline-block" onsubmit="return confirm('Are you sure you want to delete it?');">
+                        <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" style="display: inline-block" onsubmit="return confirm('Are you sure you want to delete it?');">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
@@ -35,7 +35,7 @@
     </div>
     <div class="col-md-6">
         <div class="card card-body">
-        <form action="{{ route('admin.pages.categories.store') }}" method="POST">
+        <form action="{{ route('admin.categories.store') }}" method="POST">
         @csrf
             <div class="form-group mb-3">
                 <label for="name">Name</label>

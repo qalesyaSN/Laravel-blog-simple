@@ -94,5 +94,9 @@ Route::middleware(['auth'])
                 // Tambahan kalau nanti mau update setting
                 Route::put('/', 'update')->name('update');
             });
+            
+            Route::fallback(function () {
+                return redirect()->route('admin.dashboard'); // Lempar ke dashboard
+    });
 
 });

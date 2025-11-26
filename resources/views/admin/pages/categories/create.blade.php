@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">Add Post</div>
         <div class="card-body">
-    <form action="{{ route('admin.pages.posts.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group mb-3">
             <label for="setting_key">Title</label>
