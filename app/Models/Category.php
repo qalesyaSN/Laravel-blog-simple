@@ -17,7 +17,7 @@ class Category extends Model
     
     protected static function booted() {
         static::deleting(function($category) {
-            $category->posts()->update([
+            $category->post()->update([
                 'category_id' => null,
                 'status'      => 'Archived'
                 ]);
