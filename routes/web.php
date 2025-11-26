@@ -79,6 +79,9 @@ Route::middleware(['auth'])
                 Route::get('/{id}/edit', 'edit')->name('edit');
                 Route::put('/{id}', 'update')->name('update');
                 Route::delete('/{id}', 'destroy')->name('destroy');
+                // Route khusus ganti status (AJAX)
+                Route::patch('/{id}/status', 'updateStatus')->name('status');
+
             });
 
 
