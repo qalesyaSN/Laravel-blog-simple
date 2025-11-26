@@ -46,7 +46,7 @@
                 </span>
 
                 {{-- Info Lain --}}
-                <span><i class="bi bi-folder2-open"></i> {{ $post->category->name }}</span>
+                <span><i class="bi bi-folder2-open"></i> {{ $post->category ? $post->category->name : 'None' }}</span>
                 <span class="d-none d-md-inline">|</span> {{-- Separator --}}
                 <span><i class="bi bi-person"></i> {{ $post->author->name }}</span>
                 <span class="d-none d-md-inline">|</span>
