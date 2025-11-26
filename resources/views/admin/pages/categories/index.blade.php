@@ -38,7 +38,7 @@
         @csrf
             <div class="form-group mb-3">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" placeholder="Special">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Special" value="{{ old('name') }}">
             </div>
             <div class="form-group mb-3">
                 <select name="status" class="form-control">

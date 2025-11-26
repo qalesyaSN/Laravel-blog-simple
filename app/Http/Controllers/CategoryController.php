@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::latest()->paginate(1);
+        $categories = Category::latest()->paginate(10);
         //dd($categories);
         return view('admin.pages.categories.index', compact('categories'));
     }
