@@ -66,6 +66,9 @@ class PostController extends Controller
     public function edit(string $id)
     {
         //
+        $posts = Post::findOrFail($id);
+        //dd($posts);
+        return view('admin.pages.posts.edit', compact('posts'));
     }
 
     /**
