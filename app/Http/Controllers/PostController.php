@@ -85,6 +85,12 @@ class PostController extends Controller
             'status'      => 'required'
             ]);
         $post = Post::findOrFail($id);
+        if($request->hasFile('thumbnail')){
+            Storage::delete($post->thumbnail);
+            $thumbnail = $request->file('thumbnail');
+            $thumbnail->storeAs('posts', $thumbnail->hashName());
+            $validated['thumbnail'] = '/posts/' . $thumbnail->hashName();
+        }
         $post->update($validated);
         return redirect()->route('admin.posts.index')->with('success', );
     }
