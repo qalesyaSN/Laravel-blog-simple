@@ -119,31 +119,43 @@
 
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
+
 <script>
-  // 1. Inisialisasi Quill pada div #editor-container (bukan pada input hidden)
   var quill = new Quill('#editor-container', {
     theme: 'snow',
     placeholder: 'Tulis konten artikel di sini...',
     modules: {
-        toolbar: [
-            [{ 'header': [1, 2, 3, false] }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            ['link', 'image', 'code-block'],
-            ['clean']
-        ]
+        toolbar: {
+            container: [
+                [{ 'header': [1, 2, 3, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                ['link', 'image', 'code-block'],
+                ['clean']
+            ],
+            handlers: {
+                'link': function(value) {
+                    if (value) {
+                        var href = prompt('Masukkan URL Link:'); // Munculkan Pop-up input
+                        if (href) {
+                            this.quill.format('link', href);
+                        } else {
+                            this.quill.format('link', false); // Batal jika kosong
+                        }
+                    } else {
+                        this.quill.format('link', false);
+                    }
+                }
+            }
+        }
     }
   });
 
-  // 2. Event Listener saat Form Submit
+  // --- Logic Simpan Form (Tetap sama seperti sebelumnya) ---
   var form = document.getElementById('postForm');
   form.onsubmit = function() {
-      // Ambil HTML dari Quill dan masukkan ke input hidden name="content"
       var contentInput = document.getElementById('content_input');
       contentInput.value = quill.root.innerHTML;
-      
-      // Opsional: Cek di console
-      // console.log("Submitting: " + contentInput.value);
   };
 </script>
 
