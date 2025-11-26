@@ -41,7 +41,7 @@
             <div class="small text-muted d-flex flex-wrap gap-2 align-items-center">
                 
                 {{-- Status Badge --}}
-                <span class="badge rounded-pill {{ $post->status == 'Published' ? 'bg-success' : 'bg-secondary' }}">
+                <span class="badge rounded-pill {{ $post->status == 'Published' ? 'bg-success' : 'bg-danger' }}">
                     {{ $post->status }}
                 </span>
 

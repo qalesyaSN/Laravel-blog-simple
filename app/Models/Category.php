@@ -17,14 +17,14 @@ class Category extends Model
     
     protected static function booted() {
         static::deleting(function($category) {
-            $category->post()->update([
+            $category->posts()->update([
                 'category_id' => null,
                 'status'      => 'Archived'
                 ]);
         });
     }
     
-    public function post() {
+    public function posts() {
         return $this->hasMany(Post::class);
     }
 }
