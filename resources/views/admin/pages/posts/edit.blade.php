@@ -34,6 +34,9 @@
             {{ $message }}
             </div>
             @enderror
+            <div class="col-6 card card-body mt-2">
+                <img src="/storage/{{ $post->thumbnail }}" width="100%">
+            </div>
         </div>
         <div class="form-group mb-3">
             <label for="setting_key">Category</label>
