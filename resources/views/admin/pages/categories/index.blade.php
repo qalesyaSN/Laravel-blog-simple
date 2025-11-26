@@ -34,15 +34,16 @@
     </div>
     <div class="col-md-6">
         <div class="card card-body">
-        <form action="" method="">
+        <form action="{{ route('admin.pages.categories.store') }}" method="POST">
+        @csrf
             <div class="form-group mb-3">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" placeholder="Special">
             </div>
             <div class="form-group mb-3">
-                <select name="" class="form-control">
-                    <option value="">Active</option>
-                    <option value="">Nonactive</option>
+                <select name="status" class="form-control">
+                    <option value="Active">Active</option>
+                    <option value="Nonactive">Nonactive</option>
                 </select>
             </div>
             <div class="">
