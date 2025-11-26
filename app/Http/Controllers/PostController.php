@@ -78,6 +78,14 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $validated = $request->validate([
+            'title'       => 'required',
+            'content'     => 'required',
+            'category_id' => 'required|numeric',
+            'status'      => 'required'
+            ]);
+        $post = Post::findOrFail($id);
+        $post->update($validated);
         return redirect()->route('admin.posts.index')->with('success', );
     }
 
