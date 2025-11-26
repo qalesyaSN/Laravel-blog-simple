@@ -86,7 +86,7 @@
         .btn-neo-dark { background-color: #000; color: #fff; }
         .btn-neo-dark:hover { color: #fff; background-color: #333; }
 
-        /* --- Navbar FIXED (Lega) --- */
+        /* --- Navbar FIXED --- */
         .navbar {
             border-bottom: var(--border-width) solid black;
             background-color: #fff;
@@ -107,7 +107,7 @@
             font-weight: bold;
             text-transform: uppercase;
             border: 2px solid transparent;
-            padding: 10px 20px !important; /* Padding lega */
+            padding: 10px 20px !important;
             margin: 0 5px;
             transition: all 0.2s;
         }
@@ -137,7 +137,29 @@
             );
         }
 
-        /* --- Blog Card Simple (Tanpa Deskripsi) --- */
+        /* --- NEW SKEWED TITLE STYLE (Black Box) --- */
+        .skew-header-wrapper {
+            display: inline-block;
+            transform: skewX(-10deg); /* Miring ke kiri */
+            background-color: #000;   /* Hitam Pekat */
+            padding: 8px 25px;
+            margin-bottom: 25px;
+            /* Shadow Kuning agar kontras */
+            box-shadow: 5px 5px 0px var(--accent-3); 
+            border: 2px solid black; /* Menjaga ketajaman */
+        }
+
+        .skew-header-text {
+            transform: skewX(10deg); /* Text tegak kembali */
+            color: #fff; /* Teks Putih */
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        /* --- Blog Card --- */
         .blog-card {
             background: #fff;
             border: var(--border-width) solid black;
@@ -232,7 +254,7 @@
             font-weight: bold;
         }
 
-        /* --- Footer Styles --- */
+        /* --- Footer & Widgets --- */
         footer {
             border-top: var(--border-width) solid black;
             background: white;
@@ -240,7 +262,6 @@
             margin-top: 80px;
         }
 
-        /* --- Marquee --- */
         .marquee-container {
             border-bottom: var(--border-width) solid black;
             background: var(--accent-1);
@@ -255,10 +276,19 @@
         }
         @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* Widget Utilities */
         .search-input { border: 3px solid black; border-radius: 0; padding: 10px; box-shadow: 4px 4px 0px rgba(0,0,0,0.2); }
         .search-input:focus { box-shadow: 4px 4px 0px black; border-color: black; outline: none; }
-        .widget-title { background: black; color: white; padding: 10px; margin: -23px -23px 20px -23px; text-align: center; border-bottom: 3px solid black; }
+        
+        /* Widget Title Update (Tanpa Background Hitam Full, tapi Border Bottom tebal) */
+        .widget-title { 
+            background: black; 
+            color: white; 
+            padding: 10px; 
+            margin: -23px -23px 20px -23px; 
+            text-align: center; 
+            border-bottom: 3px solid black; 
+        }
+        
         .list-group-item { border: none; border-bottom: 2px solid black; border-radius: 0; padding: 12px; font-weight: bold; }
         .list-group-item:hover { background-color: var(--accent-3); cursor: pointer; }
     </style>
@@ -310,7 +340,6 @@
                         <a href="#latest-posts" class="btn btn-neo btn-lg">Baca Sekarang</a>
                     </div>
                 </div>
-                <!-- Decorative element for desktop -->
                 <div class="col-lg-4 d-none d-lg-block text-center">
                     <div style="font-size: 10rem; line-height: 1;">👾</div>
                 </div>
@@ -324,8 +353,9 @@
             
             <!-- Blog Posts Area -->
             <div class="col-lg-8">
-                <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-3 border-dark pb-2">
-                    <h2 class="m-0">LATEST DROPS</h2>
+                <!-- Skewed Section Title: BLACK BOX STYLE -->
+                <div class="skew-header-wrapper">
+                    <h2 class="skew-header-text">LATEST DROPS</h2>
                 </div>
 
                 <div class="row">
@@ -339,14 +369,9 @@
                             <div class="blog-card-body justify-content-between">
                                 <div>
                                     <h3 class="blog-title"><a href="#">Kenapa Neobrutalism Tren Lagi?</a></h3>
-                                    
                                     <div class="blog-meta">
-                                        <div class="meta-author">
-                                            <i class="fas fa-user-circle me-1"></i> Admin
-                                        </div>
-                                        <div class="meta-date">
-                                            <i class="far fa-calendar-alt me-1"></i> 26 Nov
-                                        </div>
+                                        <div class="meta-author"><i class="fas fa-user-circle me-1"></i> Admin</div>
+                                        <div class="meta-date"><i class="far fa-calendar-alt me-1"></i> 26 Nov</div>
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-neo w-100 mt-2">Read More</a>
@@ -364,14 +389,9 @@
                             <div class="blog-card-body justify-content-between">
                                 <div>
                                     <h3 class="blog-title"><a href="#">React Hooks untuk Pemula</a></h3>
-                                    
                                     <div class="blog-meta">
-                                        <div class="meta-author">
-                                            <i class="fas fa-user-circle me-1"></i> Dev1
-                                        </div>
-                                        <div class="meta-date">
-                                            <i class="far fa-calendar-alt me-1"></i> 25 Nov
-                                        </div>
+                                        <div class="meta-author"><i class="fas fa-user-circle me-1"></i> Dev1</div>
+                                        <div class="meta-date"><i class="far fa-calendar-alt me-1"></i> 25 Nov</div>
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-neo w-100 mt-2">Read More</a>
@@ -389,14 +409,9 @@
                             <div class="blog-card-body justify-content-between">
                                 <div>
                                     <h3 class="blog-title"><a href="#">Setup Meja Kerja 2024</a></h3>
-                                    
                                     <div class="blog-meta">
-                                        <div class="meta-author">
-                                            <i class="fas fa-user-circle me-1"></i> Sarah
-                                        </div>
-                                        <div class="meta-date">
-                                            <i class="far fa-calendar-alt me-1"></i> 20 Nov
-                                        </div>
+                                        <div class="meta-author"><i class="fas fa-user-circle me-1"></i> Sarah</div>
+                                        <div class="meta-date"><i class="far fa-calendar-alt me-1"></i> 20 Nov</div>
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-neo w-100 mt-2">Read More</a>
@@ -414,14 +429,9 @@
                             <div class="blog-card-body justify-content-between">
                                 <div>
                                     <h3 class="blog-title"><a href="#">Review Konsol Retro China</a></h3>
-                                    
                                     <div class="blog-meta">
-                                        <div class="meta-author">
-                                            <i class="fas fa-user-circle me-1"></i> Gamer
-                                        </div>
-                                        <div class="meta-date">
-                                            <i class="far fa-calendar-alt me-1"></i> 18 Nov
-                                        </div>
+                                        <div class="meta-author"><i class="fas fa-user-circle me-1"></i> Gamer</div>
+                                        <div class="meta-date"><i class="far fa-calendar-alt me-1"></i> 18 Nov</div>
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-neo w-100 mt-2">Read More</a>
@@ -444,42 +454,52 @@
             <!-- Sidebar -->
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <!-- Search Widget -->
-                <div class="neo-box p-4 mb-4" style="background: var(--accent-4);">
-                    <h4 class="mb-3 fw-bold">SEARCH</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control search-input" placeholder="Keyword...">
-                        <button class="btn btn-dark" style="border: 3px solid black; border-radius: 0;" type="button"><i class="fas fa-search"></i></button>
+                <div class="mb-5">
+                    <div class="skew-header-wrapper" style="box-shadow: 5px 5px 0px var(--accent-4);">
+                        <h4 class="skew-header-text">SEARCH</h4>
+                    </div>
+                    <div class="neo-box p-4" style="background: var(--accent-4);">
+                        <div class="input-group">
+                            <input type="text" class="form-control search-input" placeholder="Keyword...">
+                            <button class="btn btn-dark" style="border: 3px solid black; border-radius: 0;" type="button"><i class="fas fa-search"></i></button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Categories Widget -->
-                <div class="neo-box p-4 mb-4">
-                    <div class="widget-title">
-                        <h5 class="m-0">KATEGORI</h5>
+                <div class="mb-5">
+                     <div class="skew-header-wrapper">
+                        <h4 class="skew-header-text">KATEGORI</h4>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Web Design <span class="badge bg-black rounded-0">12</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            JavaScript <span class="badge bg-black rounded-0">8</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Freelance <span class="badge bg-black rounded-0">5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Tutorial <span class="badge bg-black rounded-0">20</span>
-                        </li>
-                    </ul>
+                    <div class="neo-box p-4">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Web Design <span class="badge bg-black rounded-0">12</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                JavaScript <span class="badge bg-black rounded-0">8</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Freelance <span class="badge bg-black rounded-0">5</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Tutorial <span class="badge bg-black rounded-0">20</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Newsletter Widget (RESTORED) -->
-                <div class="neo-box p-4 mb-4 text-center" style="background-image: radial-gradient(black 1px, transparent 0); background-size: 10px 10px; background-color: #fff;">
-                    <i class="fas fa-paper-plane fa-3x mb-3" style="color: var(--accent-1); text-shadow: 3px 3px 0 black;"></i>
-                    <h4 class="fw-bold bg-white d-inline-block border border-3 border-dark p-1">SUBSCRIBE</h4>
-                    <p class="mt-2 bg-white p-1">Dapatkan update artikel terbaru langsung ke emailmu. No spam, janji.</p>
-                    <input type="email" class="form-control search-input mb-3" placeholder="Email Address">
-                    <button class="btn btn-neo w-100 btn-neo-secondary">LANGGANAN</button>
+                <!-- Newsletter Widget -->
+                <div class="mb-4">
+                    <div class="skew-header-wrapper" style="box-shadow: 5px 5px 0px var(--accent-1);">
+                        <h4 class="skew-header-text">SUBSCRIBE</h4>
+                    </div>
+                    <div class="neo-box p-4 text-center" style="background-image: radial-gradient(black 1px, transparent 0); background-size: 10px 10px; background-color: #fff;">
+                        <i class="fas fa-paper-plane fa-3x mb-3" style="color: var(--accent-1); text-shadow: 3px 3px 0 black;"></i>
+                        <p class="mt-2 bg-white p-1 border border-dark">Dapatkan update artikel terbaru langsung ke emailmu.</p>
+                        <input type="email" class="form-control search-input mb-3" placeholder="Email Address">
+                        <button class="btn btn-neo w-100 btn-neo-secondary">LANGGANAN</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -489,13 +509,11 @@
     <footer>
         <div class="container">
             <div class="row">
-                <!-- Kolom 1 -->
                 <div class="col-md-6 mb-4">
                     <h2 class="fw-bold">NEOBLOG.</h2>
                     <p>Dibuat dengan <i class="fas fa-heart text-danger"></i> dan Kopi.<br>
                     Style Neobrutalism berbasis Bootstrap 5.</p>
                 </div>
-                <!-- Kolom 2 -->
                 <div class="col-md-3 mb-4">
                     <h5 class="fw-bold border-bottom border-3 border-dark pb-2 d-inline-block">LINK PENTING</h5>
                     <ul class="list-unstyled mt-3">
@@ -504,7 +522,6 @@
                         <li class="mb-2"><a href="#" class="text-decoration-none text-dark fw-bold">> Kontak</a></li>
                     </ul>
                 </div>
-                <!-- Kolom 3 -->
                 <div class="col-md-3 mb-4">
                     <h5 class="fw-bold border-bottom border-3 border-dark pb-2 d-inline-block">SOCIAL</h5>
                     <div class="d-flex gap-3 mt-3">
