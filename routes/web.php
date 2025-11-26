@@ -33,6 +33,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/detail-post', function() {
+    return view('detail-post');
+});
+
 
 /*
 |--------------------------------------------------------------------------

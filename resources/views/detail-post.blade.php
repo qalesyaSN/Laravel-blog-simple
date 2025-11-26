@@ -23,10 +23,10 @@
         :root {
             --bg-color: #fffdf2;
             --main-text: #000000;
-            --accent-1: #FF6B6B; /* Red/Pink */
-            --accent-2: #4ECDC4; /* Teal */
-            --accent-3: #FFE66D; /* Yellow */
-            --accent-4: #a06cd5; /* Purple */
+            --accent-1: #FF6B6B; 
+            --accent-2: #4ECDC4; 
+            --accent-3: #FFE66D; 
+            --accent-4: #a06cd5; 
             --border-width: 3px;
             --shadow-offset: 5px;
         }
@@ -70,7 +70,7 @@
         .btn-neo-dark { background-color: #000; color: #fff; }
         .btn-neo-dark:hover { color: #fff; background-color: #333; }
 
-        /* Navbar & Footer (Sama seperti Index) */
+        /* Navbar & Footer */
         .navbar { border-bottom: var(--border-width) solid black; background-color: #fff; padding: 1.5rem 0; }
         .navbar-brand { font-size: 1.8rem; background: var(--accent-3); padding: 5px 15px; border: 2px solid black; box-shadow: 4px 4px 0px black; margin-right: 2rem; }
         .nav-link { color: black !important; font-weight: bold; text-transform: uppercase; border: 2px solid transparent; padding: 10px 20px !important; margin: 0 5px; transition: all 0.2s; }
@@ -84,177 +84,68 @@
         .skew-header-text { transform: skewX(10deg); color: #fff; font-weight: 800; font-size: 1.5rem; margin: 0; line-height: 1.2; letter-spacing: 1px; }
 
         /* ========================================================
-           2. [NEW] CSS KHUSUS HALAMAN DETAIL (COPY INI)
+           2. CSS KHUSUS HALAMAN DETAIL (UPDATED)
            ======================================================== */
         
-        /* A. Breadcrumb Custom */
-        .breadcrumb-neo .breadcrumb-item {
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-        .breadcrumb-neo .breadcrumb-item a {
-            color: black;
-            text-decoration: none;
-            border-bottom: 2px solid var(--accent-2);
-        }
-        .breadcrumb-neo .breadcrumb-item a:hover {
-            background-color: var(--accent-2);
-        }
-        .breadcrumb-neo .breadcrumb-item + .breadcrumb-item::before {
-            content: ">";
-            color: black;
-            font-weight: 900;
-        }
+        .breadcrumb-neo .breadcrumb-item { font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .breadcrumb-neo .breadcrumb-item a { color: black; text-decoration: none; border-bottom: 2px solid var(--accent-2); }
+        .breadcrumb-neo .breadcrumb-item a:hover { background-color: var(--accent-2); }
+        .breadcrumb-neo .breadcrumb-item + .breadcrumb-item::before { content: ">"; color: black; font-weight: 900; }
 
-        /* B. Article Header Styles */
+        /* Header Artikel */
         .article-header {
             border-bottom: 3px solid black;
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
         
+        /* --- PERBAIKAN META TAG (FLEXBOX GAP) --- */
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap; /* Mengizinkan elemen turun ke bawah jika sempit */
+            gap: 10px;       /* Memberi jarak otomatis (atas-bawah & kiri-kanan) */
+            align-items: center;
+        }
+
         .article-meta span {
-            margin-right: 15px;
             font-weight: bold;
             font-size: 0.9rem;
-            display: inline-block;
+            display: inline-flex; /* Agar icon dan text sejajar rapi */
+            align-items: center;
             background: #eee;
-            padding: 2px 8px;
+            padding: 5px 12px;    /* Padding sedikit diperbesar agar lega */
             border: 1px solid black;
-        }
-
-        .featured-image-wrapper {
-            width: 100%;
-            border: 3px solid black;
-            box-shadow: 5px 5px 0px black;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        /* C. Article Content Styles */
-        .article-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            white-space: nowrap;  /* Mencegah teks di dalam kotak patah */
         }
         
-        .article-content p {
-            margin-bottom: 1.5rem;
+        .article-meta span i {
+            margin-right: 8px;
         }
+        /* ---------------------------------------- */
 
-        /* Dropcap (Huruf pertama besar) */
-        .article-content p:first-of-type::first-letter {
-            float: left;
-            font-family: 'Lexend Mega', sans-serif;
-            font-size: 4rem;
-            line-height: 0.8;
-            padding-right: 10px;
-            padding-top: 5px;
-            font-weight: 700;
-        }
+        .featured-image-wrapper { width: 100%; border: 3px solid black; box-shadow: 5px 5px 0px black; margin-bottom: 30px; overflow: hidden; }
 
-        /* Blockquote Style - Kotak Kuning Miring */
-        .article-content blockquote {
-            background: var(--accent-3);
-            border: 3px solid black;
-            padding: 20px;
-            margin: 30px 0;
-            font-style: italic;
-            font-weight: bold;
-            box-shadow: 5px 5px 0px black;
-        }
+        /* Konten Artikel */
+        .article-content { font-size: 1.1rem; line-height: 1.8; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content p:first-of-type::first-letter { float: left; font-family: 'Lexend Mega', sans-serif; font-size: 4rem; line-height: 0.8; padding-right: 10px; padding-top: 5px; font-weight: 700; }
+        .article-content blockquote { background: var(--accent-3); border: 3px solid black; padding: 20px; margin: 30px 0; font-style: italic; font-weight: bold; box-shadow: 5px 5px 0px black; }
+        .article-content ul { list-style-type: square; padding-left: 20px; margin-bottom: 20px; }
+        .article-content li { margin-bottom: 10px; font-weight: bold; }
 
-        /* Styling List di dalam artikel */
-        .article-content ul {
-            list-style-type: square;
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        .article-content li {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+        /* Author Box */
+        .author-box { background: var(--accent-2); border: 3px solid black; padding: 25px; margin-top: 50px; box-shadow: 5px 5px 0px black; display: flex; align-items: center; gap: 20px; }
+        .author-img { width: 80px; height: 80px; border: 3px solid black; border-radius: 50%; background: white; object-fit: cover; }
 
-        /* D. Author Box */
-        .author-box {
-            background: var(--accent-2); /* Teal Background */
-            border: 3px solid black;
-            padding: 25px;
-            margin-top: 50px;
-            box-shadow: 5px 5px 0px black;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .author-img {
-            width: 80px;
-            height: 80px;
-            border: 3px solid black;
-            border-radius: 50%; /* Bulat */
-            background: white;
-            object-fit: cover;
-        }
-
-        /* E. Comments Section */
-        .comments-area {
-            margin-top: 60px;
-        }
-
-        .comment-item {
-            background: white;
-            border: 3px solid black;
-            padding: 20px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .comment-avatar {
-            width: 40px;
-            height: 40px;
-            background: black;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            border: 2px solid black;
-            margin-right: 10px;
-        }
-
-        .reply-btn {
-            font-size: 0.8rem;
-            text-decoration: underline;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-        }
+        /* Komentar */
+        .comments-area { margin-top: 60px; }
+        .comment-item { background: white; border: 3px solid black; padding: 20px; margin-bottom: 20px; position: relative; }
+        .comment-header { display: flex; justify-content: space-between; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
+        .comment-avatar { width: 40px; height: 40px; background: black; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid black; margin-right: 10px; }
+        .reply-btn { font-size: 0.8rem; text-decoration: underline; color: black; font-weight: bold; cursor: pointer; }
         .reply-btn:hover { background-color: var(--accent-3); }
-
-        /* Form Komentar */
-        .comment-form textarea {
-            border: 3px solid black;
-            border-radius: 0;
-            padding: 15px;
-            font-family: 'Space Mono', monospace;
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
-            resize: none;
-        }
-        .comment-form textarea:focus {
-            box-shadow: 4px 4px 0px black;
-            outline: none;
-            border-color: black;
-        }
-
-        /* --- END NEW CSS --- */
+        .comment-form textarea { border: 3px solid black; border-radius: 0; padding: 15px; font-family: 'Space Mono', monospace; box-shadow: 4px 4px 0px rgba(0,0,0,0.2); resize: none; }
+        .comment-form textarea:focus { box-shadow: 4px 4px 0px black; outline: none; border-color: black; }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -291,7 +182,6 @@
             <!-- KOLOM KIRI: KONTEN ARTIKEL -->
             <div class="col-lg-8">
                 
-                <!-- 1. Breadcrumb -->
                 <nav aria-label="breadcrumb" class="mb-4">
                     <ol class="breadcrumb breadcrumb-neo">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -300,18 +190,16 @@
                     </ol>
                 </nav>
 
-                <!-- 2. Konten Utama dalam Neo Box -->
                 <article class="neo-box p-4 p-md-5 mb-5">
                     
-                    <!-- Article Header -->
                     <header class="article-header">
-                        <!-- Category Tag Miring (Skew) -->
                         <div class="skew-header-wrapper" style="padding: 5px 15px; margin-bottom: 15px; transform: skewX(-10deg) scale(0.8); transform-origin: left;">
                             <h5 class="skew-header-text" style="font-size: 1rem;">DESAIN UI/UX</h5>
                         </div>
 
                         <h1 class="display-5 mb-3" style="font-weight: 800; line-height: 1.2;">Kenapa Neobrutalism Menjadi Tren UI di Tahun 2024?</h1>
                         
+                        <!-- META TAGS UPDATE -->
                         <div class="article-meta text-muted">
                             <span><i class="fas fa-user"></i> Admin</span>
                             <span><i class="far fa-calendar-alt"></i> 26 Nov 2024</span>
@@ -319,12 +207,10 @@
                         </div>
                     </header>
 
-                    <!-- Featured Image -->
                     <div class="featured-image-wrapper">
                         <img src="https://placehold.co/800x450/FF6B6B/000000?text=NEOBRUTALISM&font=roboto" class="img-fluid w-100" alt="Featured Image">
                     </div>
 
-                    <!-- Article Body Content -->
                     <div class="article-content">
                         <p>Desain web terus berputar. Setelah bertahun-tahun didominasi oleh gaya "Clean", "Minimalist", dan material design yang serba rounded dan bayangan halus, kini muncul pemberontakan visual. Selamat datang di era <strong>Neobrutalism</strong>.</p>
                         
@@ -351,7 +237,6 @@
                         </div>
                     </div>
 
-                    <!-- 3. Author Box -->
                     <div class="author-box">
                         <img src="https://placehold.co/100x100/black/white?text=AD" alt="Author" class="author-img">
                         <div>
@@ -367,13 +252,11 @@
 
                 </article>
 
-                <!-- 4. Comments Section -->
                 <section class="comments-area">
                     <div class="skew-header-wrapper mb-4">
                         <h3 class="skew-header-text">KOMENTAR (3)</h3>
                     </div>
 
-                    <!-- Comment Form -->
                     <div class="neo-box p-4 mb-5 comment-form" style="background: #f9f9f9;">
                         <h5 class="fw-bold mb-3">Tinggalkan Jejak</h5>
                         <div class="mb-3">
@@ -383,9 +266,7 @@
                         <button class="btn btn-neo">KIRIM KOMENTAR</button>
                     </div>
 
-                    <!-- Comment List -->
                     <div class="comment-list">
-                        <!-- Comment 1 -->
                         <div class="comment-item">
                             <div class="comment-header">
                                 <div class="d-flex align-items-center">
@@ -400,7 +281,6 @@
                             <p class="mb-0">Setuju banget! Bosen liat web yang rounded-rounded terus. Ini lebih fresh!</p>
                         </div>
 
-                        <!-- Comment 2 (Reply style padding-left) -->
                         <div class="comment-item ms-5" style="border-color: var(--accent-4);">
                             <div class="comment-header">
                                 <div class="d-flex align-items-center">
@@ -414,7 +294,6 @@
                             <p class="mb-0">Yoi kang Ujang! Gass terus brutalism.</p>
                         </div>
 
-                        <!-- Comment 3 -->
                         <div class="comment-item">
                             <div class="comment-header">
                                 <div class="d-flex align-items-center">
@@ -433,9 +312,8 @@
 
             </div>
 
-            <!-- KOLOM KANAN: SIDEBAR (Sama seperti Index) -->
+            <!-- SIDEBAR -->
             <div class="col-lg-4 mt-5 mt-lg-0">
-                <!-- Search Widget -->
                 <div class="mb-5">
                     <div class="skew-header-wrapper" style="box-shadow: 5px 5px 0px var(--accent-4);">
                         <h4 class="skew-header-text">SEARCH</h4>
@@ -448,7 +326,6 @@
                     </div>
                 </div>
 
-                <!-- Related Posts Widget (NEW for Detail Page) -->
                 <div class="mb-5">
                      <div class="skew-header-wrapper">
                         <h4 class="skew-header-text">BACA JUGA</h4>
@@ -477,7 +354,6 @@
                     </div>
                 </div>
 
-                <!-- Newsletter Widget -->
                 <div class="mb-4">
                     <div class="skew-header-wrapper" style="box-shadow: 5px 5px 0px var(--accent-1);">
                         <h4 class="skew-header-text">SUBSCRIBE</h4>
@@ -494,7 +370,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
@@ -529,4 +404,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
