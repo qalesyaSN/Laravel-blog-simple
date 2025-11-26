@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'List Category')
 @section('content')
 <div class="container">
     <x-alert/>

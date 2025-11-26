@@ -72,5 +72,8 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         //
+        $categories = Category::findOrFail($id);
+        $categories->delete();
+        return redirect()->route('admin.categories.index')->with('success', 'kategori terhapus');
     }
 }
