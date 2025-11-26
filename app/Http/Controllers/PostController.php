@@ -78,7 +78,7 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        return redirect()->route('admin.pages.posts.index')->with('success', );
+        return redirect()->route('admin.posts.index')->with('success', );
     }
 
     /**

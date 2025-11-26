@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-header">Add Post</div>
         <div class="card-body">
-    <form action="{{ route('admin.pages.posts.update') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.pages.posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group mb-3">
