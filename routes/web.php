@@ -47,7 +47,7 @@ Route::middleware(['auth'])
         
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
-        Route::post('/posts/edit/{id}', [PostController::class, 'edit'])->name('pages.posts.edit');
+        Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('pages.posts.edit');
         
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
