@@ -83,7 +83,7 @@
 </div>
 @empty
 
-<div class="text-center p-5">
+<div class="text-center p-3">
     <h4>No posts yet!</h4>
 </div>
 @endforelse
