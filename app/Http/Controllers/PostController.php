@@ -92,7 +92,9 @@ class PostController extends Controller
             $validated['thumbnail'] = '/posts/' . $thumbnail->hashName();
         }
         $post->update($validated);
-        return redirect()->route('admin.posts.index')->with('success', );
+        // Ganti return redirect() yang lama dengan ini:
+        return to_route('admin.posts.index')->with('success', 'Data berhasil diupdate!')->setStatusCode(303); // <--- INI OBATNYA
+
     }
 
     /**
