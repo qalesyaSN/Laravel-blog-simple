@@ -66,9 +66,10 @@ class PostController extends Controller
     public function edit(string $id)
     {
         //
-        $posts = Post::with(['category'])->findOrFail($id);
+        $post = Post::findOrFail($id);
+        $categories = Category::where('status', 'Active')->get();
         //dd($posts);
-        return view('admin.pages.posts.edit', compact('posts'));
+        return view('admin.pages.posts.edit', compact('post', 'categories'));
     }
 
     /**

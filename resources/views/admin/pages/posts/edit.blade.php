@@ -10,7 +10,7 @@
         @csrf
         <div class="form-group mb-3">
             <label for="setting_key">Title</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Title" value="{{ old('title') }}">
+            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Title" value="{{ $post->title }}">
             @error('title')
             <div class="alert alert-danger mt-2 p-2">
             {{ $message }}
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="content">Content</label>
-            <textarea class="form-control @error('title') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
+            <textarea class="form-control @error('title') is-invalid @enderror" name="content">{{ $post->content }}</textarea>
             @error('content')
             <div class="alert alert-danger mt-2 p-2">
             {{ $message }}
@@ -40,7 +40,7 @@
             <select name="category_id" class="form-control @error('category_id') is-invalid @enderror">
                 <option>Select Category</option>
                 @foreach($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                <option value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                 @endforeach
             </select>
             @error('category_id')
