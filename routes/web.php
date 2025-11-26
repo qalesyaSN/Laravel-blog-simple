@@ -49,6 +49,11 @@ Route::middleware(['auth'])
         // Route Name: admin.posts.create
         Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('pages.posts.edit');
         
+        // 2. Route untuk Menyimpan Perubahan (PUT)
+        // URL: localhost:8000/posts/1
+        Route::put('/posts/{id}', [PostController::class, 'update'])->name('pages.posts.update');
+
+        
         // URL: /admin/posts/create
         // Route Name: admin.posts.create
         Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])->name('pages.posts.destroy');
