@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
 
 class HomepageController extends Controller
 {
@@ -14,8 +15,9 @@ class HomepageController extends Controller
     {
         //
         $posts = Post::with(['author', 'category'])->latest()->paginate(10);
+        $categories = Category::withCount('posts')->latest()->get();
         //dd($posts);
-        return view('homepage', compact('posts'));
+        return view('homepage', compact('posts', 'categories'));
     }
 
     /**

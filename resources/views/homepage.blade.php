@@ -173,15 +173,13 @@
                 <div class="neo-box p-0">
                     <ul class="list-group list-group-flush">
                         <!-- Contoh Static, nanti bisa diganti loop category -->
+                        @forelse($categories as $category)
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Web Design <span class="badge bg-black rounded-0">12</span>
+                            {{ $category->name }} <span class="badge bg-black rounded-0">{{ $category->posts_count }}</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            JavaScript <span class="badge bg-black rounded-0">8</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Laravel <span class="badge bg-black rounded-0">5</span>
-                        </li>
+                        @empty
+                        
+                        @endforelse
                     </ul>
                 </div>
             </div>

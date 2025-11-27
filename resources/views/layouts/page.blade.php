@@ -416,8 +416,7 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <h2 class="fw-bold">{{ \App\Models\Setting::get('site_title') }}.</h2>
-                    <p>Dibuat dengan <i class="fas fa-heart text-danger"></i> dan Kopi.<br>
-                    Style Neobrutalism berbasis Bootstrap 5.</p>
+                    <p>{{ \App\Models\Setting::get('site_description') }}</p>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5 class="fw-bold border-bottom border-3 border-dark pb-2 d-inline-block">LINK PENTING</h5>
@@ -430,14 +429,14 @@
                 <div class="col-md-3 mb-4">
                     <h5 class="fw-bold border-bottom border-3 border-dark pb-2 d-inline-block">SOCIAL</h5>
                     <div class="d-flex gap-3 mt-3">
-                        <a href="#" class="btn btn-neo-dark p-2 px-3" style="border: 2px solid black; box-shadow: 3px 3px 0 white;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="btn btn-neo-dark p-2 px-3" style="border: 2px solid black; box-shadow: 3px 3px 0 white;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="btn btn-neo-dark p-2 px-3" style="border: 2px solid black; box-shadow: 3px 3px 0 white;"><i class="fab fa-github"></i></a>
+                        <a href="{{ \App\Models\Setting::get('social_twitter') }}" class="btn btn-neo-dark p-2 px-3" style="border: 2px solid black; box-shadow: 3px 3px 0 white;"><i class="fab fa-twitter"></i></a>
+                        <a href="{{ \App\Models\Setting::get('social_instagram') }}" class="btn btn-neo-dark p-2 px-3" style="border: 2px solid black; box-shadow: 3px 3px 0 white;"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ \App\Models\Setting::get('social_facebook') }}" class="btn btn-neo-dark p-2 px-3" style="border: 2px solid black; box-shadow: 3px 3px 0 white;"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-4 pt-4 border-top border-dark">
-                <p class="mb-0 fw-bold">&copy; {{ date('Y') }} NEOBLOG. All Rights Reserved.</p>
+                <p class="mb-0 fw-bold">&copy; 2025-{{ date('Y') }} {{ \App\Models\Setting::get('site_footer_text') }}.</p>
             </div>
         </div>
     </footer>
