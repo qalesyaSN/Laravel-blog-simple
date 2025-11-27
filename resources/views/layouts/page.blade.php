@@ -102,7 +102,7 @@
         .navbar-brand {
             font-size: 1.8rem;
             background: var(--accent-3);
-            padding: 5px 15px;
+            padding: 1px 8px;
             border: 2px solid black;
             box-shadow: 4px 4px 0px black;
             margin-right: 2rem;
@@ -383,7 +383,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">NEO<span style="color:white;">BLOG</span>.</a>
+            <a class="navbar-brand" href="{{ url('/') }}"> >_</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     style="border: 3px solid black; border-radius: 0; box-shadow: 3px 3px 0 black; background: var(--accent-3);">
                 <span class="navbar-toggler-icon"></span>

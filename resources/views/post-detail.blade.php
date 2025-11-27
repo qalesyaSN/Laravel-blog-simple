@@ -1,4 +1,5 @@
 @extends('layouts.page')
+@section('title', $post->title)
 @section('content')
     <div class="container my-5">
         <div class="row">
@@ -27,7 +28,7 @@
                         <div class="article-meta text-muted">
                             <span><i class="fas fa-user"></i> {{ $post->author->name }}</span>
                             <span><i class="far fa-calendar-alt"></i> {{ $post->created_at->format('d M Y') }} </span>
-                            <span><i class="far fa-comments"></i> 12 Komentar</span>
+                            
                         </div>
                     </header>
 
@@ -42,7 +43,7 @@
                     <div class="author-box">
                         <img src="https://placehold.co/100x100/black/white?text=AD" alt="Author" class="author-img">
                         <div>
-                            <h5 class="fw-bold mb-1">DITULIS OLEH: ADMIN GANTENG</h5>
+                            <h5 class="fw-bold mb-1">DITULIS OLEH: {{ $post->author->name }}</h5>
                             <p class="mb-2 small">Web Developer yang suka kopi hitam dan desain yang bikin sakit mata tapi estetik.</p>
                             <div class="d-flex gap-2">
                                 <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
