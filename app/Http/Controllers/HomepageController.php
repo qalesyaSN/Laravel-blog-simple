@@ -14,6 +14,7 @@ class HomepageController extends Controller
     {
         //
         $posts = Post::with(['author', 'category'])->latest()->paginate(10);
+        //dd($posts);
         return view('homepage', compact('posts'));
     }
 
