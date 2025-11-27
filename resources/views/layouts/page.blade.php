@@ -306,6 +306,76 @@
         
         .list-group-item { border: none; border-bottom: 2px solid black; border-radius: 0; padding: 12px; font-weight: bold; }
         .list-group-item:hover { background-color: var(--accent-3); cursor: pointer; }
+        
+        /* ========================================================
+           2. CSS KHUSUS HALAMAN DETAIL (UPDATED)
+           ======================================================== */
+        
+        .breadcrumb-neo .breadcrumb-item { font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .breadcrumb-neo .breadcrumb-item a { color: black; text-decoration: none; border-bottom: 2px solid var(--accent-2); }
+        .breadcrumb-neo .breadcrumb-item a:hover { background-color: var(--accent-2); }
+        .breadcrumb-neo .breadcrumb-item + .breadcrumb-item::before { content: ">"; color: black; font-weight: 900; }
+
+        /* Header Artikel */
+        .article-header {
+            border-bottom: 3px solid black;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* --- PERBAIKAN META TAG (FLEXBOX GAP) --- */
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap; /* Mengizinkan elemen turun ke bawah jika sempit */
+            gap: 10px;       /* Memberi jarak otomatis (atas-bawah & kiri-kanan) */
+            align-items: center;
+        }
+
+        .article-meta span {
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex; /* Agar icon dan text sejajar rapi */
+            align-items: center;
+            background: #eee;
+            padding: 5px 12px;    /* Padding sedikit diperbesar agar lega */
+            border: 1px solid black;
+            white-space: nowrap;  /* Mencegah teks di dalam kotak patah */
+        }
+        
+        .article-meta span i {
+            margin-right: 8px;
+        }
+        /* ---------------------------------------- */
+
+        .featured-image-wrapper { width: 100%; border: 3px solid black; box-shadow: 5px 5px 0px black; margin-bottom: 30px; overflow: hidden; }
+
+        /* Konten Artikel */
+        .article-content { font-size: 1.1rem; line-height: 1.8; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content p:first-of-type::first-letter { float: left; font-family: 'Lexend Mega', sans-serif; font-size: 4rem; line-height: 0.8; padding-right: 10px; padding-top: 5px; font-weight: 700; }
+        .article-content blockquote { background: var(--accent-3); border: 3px solid black; padding: 20px; margin: 30px 0; font-style: italic; font-weight: bold; box-shadow: 5px 5px 0px black; }
+        .article-content ul { list-style-type: square; padding-left: 20px; margin-bottom: 20px; }
+        .article-content li { margin-bottom: 10px; font-weight: bold; }
+
+        /* Author Box */
+        .author-box { background: var(--accent-2); border: 3px solid black; padding: 25px; margin-top: 50px; box-shadow: 5px 5px 0px black; display: flex; align-items: center; gap: 20px; }
+        .author-img { width: 80px; height: 80px; border: 3px solid black; border-radius: 50%; background: white; object-fit: cover; }
+
+        /* Komentar */
+        .comments-area { margin-top: 60px; }
+        .comment-item { background: white; border: 3px solid black; padding: 20px; margin-bottom: 20px; position: relative; }
+        .comment-header { display: flex; justify-content: space-between; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
+        .comment-avatar { width: 40px; height: 40px; background: black; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid black; margin-right: 10px; }
+        .reply-btn { font-size: 0.8rem; text-decoration: underline; color: black; font-weight: bold; cursor: pointer; }
+        .reply-btn:hover { background-color: var(--accent-3); }
+        .comment-form textarea { border: 3px solid black; border-radius: 0; padding: 15px; font-family: 'Space Mono', monospace; box-shadow: 4px 4px 0px rgba(0,0,0,0.2); resize: none; }
+        .comment-form textarea:focus { box-shadow: 4px 4px 0px black; outline: none; border-color: black; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .author-box { flex-direction: column; text-align: center; }
+            .article-content p:first-of-type::first-letter { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>

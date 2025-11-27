@@ -36,6 +36,7 @@ Route::get('/detail-post', function() {
     return view('detail-post');
 });
 
+Route::get('/post/{slug}', [HomepageController::class, 'show'])->name('post.show');
 
 /*
 |--------------------------------------------------------------------------
