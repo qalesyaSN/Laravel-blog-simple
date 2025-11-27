@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', \App\Models\Setting::get('site_title') ?? 'NeoBlog')</title>
+    <title>@yield('title', \App\Models\Setting::get('site_title') ?? 'Blog')</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -100,7 +100,7 @@
         }
 
         .navbar-brand {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             background: var(--accent-3);
             padding: 1px 8px;
             border: 2px solid black;
@@ -415,7 +415,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <h2 class="fw-bold">NEOBLOG.</h2>
+                    <h2 class="fw-bold">{{ \App\Models\Setting::get('site_title') }}.</h2>
                     <p>Dibuat dengan <i class="fas fa-heart text-danger"></i> dan Kopi.<br>
                     Style Neobrutalism berbasis Bootstrap 5.</p>
                 </div>
