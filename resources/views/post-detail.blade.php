@@ -11,7 +11,7 @@
                     <ol class="breadcrumb breadcrumb-neo">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">{{ $post->category->name }}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Single Post</li>
+                        
                     </ol>
                 </nav>
 
@@ -40,7 +40,9 @@
                          {!! $post->content !!}
                     </div>
 
-                    <div class="author-box">
+                </article>
+                
+                                    <div class="author-box">
                         <img src="https://placehold.co/100x100/black/white?text=AD" alt="Author" class="author-img">
                         <div>
                             <h5 class="fw-bold mb-1">DITULIS OLEH: {{ $post->author->name }}</h5>
@@ -53,7 +55,6 @@
                         </div>
                     </div>
 
-                </article>
 
                 <section class="comments-area">
                     <div class="skew-header-wrapper mb-4">
