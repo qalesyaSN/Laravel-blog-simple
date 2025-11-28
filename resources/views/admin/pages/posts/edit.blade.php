@@ -111,7 +111,7 @@
                 @method('PUT')
                 
                 <div class="form-group mb-3">
-                    <label class="fw-bold mb-1">Title</label>
+                    <label>Title</label>
                     <input type="text" class="form-control" name="title" value="{{ old('title', $post->title) }}">
                     @error('title')
                         <div class="alert alert-danger mt-2 p-2">{{ $message }}</div>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="fw-bold mb-1">Content</label>
+                    <label>Content</label>
                     
                     <textarea id="summernote" name="content">{{ old('content', $post->content) }}</textarea>
 
@@ -129,7 +129,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="fw-bold mb-1">Thumbnail</label>
+                    <label>Thumbnail</label>
                     <input type="file" class="form-control" name="thumbnail">
                     @if($post->thumbnail)
                         <div class="mt-2 p-1 border border-dark rounded" style="width: 150px;">
@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="fw-bold mb-1">Category</label>
+                    <label>Category</label>
                     <select name="category_id" class="form-control">
                         <option value="">Select Category</option>
                         @foreach($categories as $category)
