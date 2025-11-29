@@ -18,7 +18,7 @@ class SettingSeeder extends Seeder
             // --- 1. GENERAL SETTINGS (Identitas Website) ---
             [
                 'setting_key'   => 'site_title',
-                'setting_value' => 'Blog Simple',
+                'setting_value' => 'Q-Blog',
                 'description'   => 'Judul utama website yang tampil di tab browser'
             ],
             [
@@ -28,7 +28,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'setting_key'   => 'site_description',
-                'setting_value' => 'Blog Simple adalah platform berbagi artikel teknologi terkini.',
+                'setting_value' => 'Q-Blog adalah platform berbagi artikel teknologi terkini.',
                 'description'   => 'Deskripsi singkat website untuk footer atau SEO'
             ],
             [
@@ -43,14 +43,14 @@ class SettingSeeder extends Seeder
             ],
             [
                 'setting_key'   => 'site_footer_text',
-                'setting_value' => '© 2025 Blog Simple. All Rights Reserved.',
+                'setting_value' => 'All Rights Reserved.',
                 'description'   => 'Teks hak cipta di bagian paling bawah'
             ],
 
             // --- 2. CONTACT INFO (Informasi Kontak) ---
             [
                 'setting_key'   => 'contact_email',
-                'setting_value' => 'admin@blogsimple.com',
+                'setting_value' => 'admin@q-blog.com',
                 'description'   => 'Email resmi untuk kontak'
             ],
             [
@@ -77,7 +77,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'setting_key'   => 'seo_author',
-                'setting_value' => 'Admin Nunu',
+                'setting_value' => 'Nunu',
                 'description'   => 'Nama penulis default untuk meta tag'
             ],
             [
@@ -109,11 +109,8 @@ class SettingSeeder extends Seeder
             ],
         ];
 
-        // --- PROSES LOOPING ---
+
         foreach ($settings as $setting) {
-            // Kita pakai updateOrCreate
-            // Artinya: Kalau key 'site_title' udah ada, dia cuma update.
-            // Kalau belum ada, dia bikin baru. (Aman kalau di-seed berkali-kali)
             Setting::updateOrCreate(
                 ['setting_key' => $setting['setting_key']], // Cek berdasarkan key
                 $setting // Data yang disimpan
