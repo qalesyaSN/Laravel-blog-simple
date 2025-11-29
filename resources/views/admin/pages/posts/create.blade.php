@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Add Post')
 @section('content')
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<link href="{{ asset('assets/css/summernote.css') }}"  rel="stylesheet">
 <div class="container">
     <!--x-alert /-->
     <div class="card">
@@ -19,7 +24,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="content">Content</label>
-            <textarea class="form-control @error('title') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
+            <textarea id="summernote" class="form-control @error('title') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
             @error('content')
             <div class="alert alert-danger mt-2 p-2">
             {{ $message }}
@@ -57,4 +62,21 @@
     </div>
     </div>
 </div>
+
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Tulis konten artikel di sini...',
+        tabsize: 2,
+        height: 350,
+        toolbar: [
+          // Saya sederhanakan grupnya agar lebih muat di satu baris
+          ['style', ['style']],
+          ['font', ['bold', 'italic', 'underline', 'clear']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview']]
+        ]
+    });
+</script>
+
 @endsection
