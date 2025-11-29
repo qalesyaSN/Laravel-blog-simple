@@ -46,6 +46,16 @@ class SettingSeeder extends Seeder
                 'setting_value' => 'All Rights Reserved.',
                 'description'   => 'Teks hak cipta di bagian paling bawah'
             ],
+            [
+                'setting_key'   => 'marquee_text',
+                'setting_value' => 'Selamat datang di blog yang simple ini.',
+                'description'   => 'Teks berjalan yang berada di bagian paling atas'
+            ],
+            [
+                'setting_key'   => 'marquee_status',
+                'setting_value' => 'On',
+                'description'   => 'Status teks berjalan yang berada di bagian paling atas'
+            ],
 
             // --- 2. CONTACT INFO (Informasi Kontak) ---
             [
