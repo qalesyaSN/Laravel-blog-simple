@@ -419,11 +419,11 @@
                     <p>{{ \App\Models\Setting::get('site_description') }}</p>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <h5 class="fw-bold border-bottom border-3 border-dark pb-2 d-inline-block">LINK PENTING</h5>
+                    <h5 class="fw-bold border-bottom border-3 border-dark pb-2 d-inline-block">LINK</h5>
                     <ul class="list-unstyled mt-3">
                         <li class="mb-2"><a href="{{ url('/') }}" class="text-decoration-none text-dark fw-bold">> Home</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark fw-bold">> Tentang Kami</a></li>
-                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark fw-bold">> Kontak</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark fw-bold">> About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark fw-bold">> Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">

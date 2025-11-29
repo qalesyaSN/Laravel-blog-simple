@@ -15,7 +15,7 @@ class HomepageController extends Controller
     {
         //
         $posts = Post::with(['author', 'category'])->latest()->paginate(10);
-        $categories = Category::withCount('posts')->latest()->get();
+        $categories = Category::where('status', 'Active')->withCount('posts')->latest()->get();
         //dd($posts);
         return view('homepage', compact('posts', 'categories'));
     }

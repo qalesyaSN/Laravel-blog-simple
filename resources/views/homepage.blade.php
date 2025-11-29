@@ -17,9 +17,9 @@
         <div class="row align-items-center">
             <div class="col-lg-8">
                 <div class="neo-box p-4 p-md-5" style="background: var(--accent-3);">
-                    <h1 class="display-3 mb-3" style="text-transform: uppercase;">Berani Beda,<br>Berani Brutal.</h1>
+                    <h5 class="display-3 mb-3" style="text-transform: uppercase;">Berani Beda,<br>Berani Brutal.</h5>
                     <p class="lead mb-4">Blog teknologi, desain, dan kehidupan programmer dengan gaya yang tidak membosankan.</p>
-                    <a href="#latest-posts" class="btn btn-neo btn-lg">Baca Sekarang</a>
+                    <a href="#latest-posts" class="btn btn-neo btn-lg">Read More</a>
                 </div>
             </div>
             <!-- Decorative Icon (Desktop Only) -->
@@ -168,7 +168,7 @@
             <!-- Categories Widget -->
             <div class="mb-5">
                 <div class="skew-header-wrapper">
-                    <h4 class="skew-header-text">KATEGORI</h4>
+                    <h4 class="skew-header-text">CATEGORY</h4>
                 </div>
                 <div class="neo-box p-0">
                     <ul class="list-group list-group-flush">
@@ -191,9 +191,9 @@
                 </div>
                 <div class="neo-box p-4 text-center" style="background-image: radial-gradient(black 1px, transparent 0); background-size: 10px 10px; background-color: #fff;">
                     <i class="fas fa-paper-plane fa-3x mb-3" style="color: var(--accent-1); text-shadow: 3px 3px 0 black;"></i>
-                    <p class="mt-2 bg-white p-1 border border-dark">Dapatkan update artikel terbaru langsung ke emailmu.</p>
+                    <p class="mt-2 bg-white p-1 border border-dark">Get the latest article updates straight to your email.</p>
                     <input type="email" class="form-control search-input mb-3" placeholder="Email Address">
-                    <button class="btn btn-neo w-100 btn-neo-secondary">LANGGANAN</button>
+                    <button class="btn btn-neo w-100 btn-neo-secondary">SUBSCRIBE</button>
                 </div>
             </div>
 
