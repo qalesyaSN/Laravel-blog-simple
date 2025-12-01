@@ -33,7 +33,7 @@
                     </header>
 
                     <div class="featured-image-wrapper">
-                        <img src="/storage/{{ $post->thumbnail }}" class="img-fluid w-100" alt="Featured Image">
+                        <img src="/storage/{{ $post->thumbnail }}" class="img-fluid w-100" alt="Featured Image" onerror="this.src='https://placehold.co/600x400/eee/000?text=No+Image&font=roboto'">
                     </div>
 
                     <div class="article-content">

@@ -19,7 +19,7 @@ class PostSeeder extends Seeder
             'content' => '<p>Halo dunia! Selamat datang di postingan pertama blog baru saya. Ini adalah awal dari perjalanan digital yang menarik, di mana saya akan berbagi berbagai pemikiran, ide, dan pengalaman seputar pengembangan teknologi dan keseharian.</p>',
             'category_id'  => '1',
             'user_id'    => '1',
-            'thumbnail'    => '/posts/hello-world.png',
+            'thumbnail'    => null,
             'slug'         => 'postingan-pertama-1',
             'status'       => 'Published'
             ]);
