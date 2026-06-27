@@ -292,4 +292,321 @@ function halo() {
         <!-- KELOMPOK 3: LINKS & MEDIA -->
         <section id="kelompok-media" class="space-y-6">
             <div class="border-b border-slate-200 pb-3">
-                <h3 class="text-2xl font-bold text-slate-800">3. Konektivitas & Elemen Multime
+                <h3 class="text-2xl font-bold text-slate-800">3. Konektivitas & Elemen Multimedia</h3>
+                <p class="text-slate-500 text-sm">Menyambungkan halaman web ke penjuru dunia internet dan memuat gambar berkualitas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Element Card: ANCHOR (LINK) -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;a&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Anchor Link (Tautan)</h4>
+                            <p class="text-slate-500 text-xs mt-1">Tag utama untuk navigasi. Menggunakan atribut <code>href</code> untuk menentukan target URL dan <code>target="_blank"</code> untuk membukanya di tab baru.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;a href="https://github.com" target="_blank"&gt;
+  Buka GitHub
+&lt;/a&gt;
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-center">
+                            <a href="https://github.com" target="_blank" class="inline-block text-xs font-bold text-indigo-600 hover:underline">Buka GitHub &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Element Card: IMAGE -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;img&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Image (Gambar)</h4>
+                            <p class="text-slate-500 text-xs mt-1">Menampilkan grafis di halaman web. Tag mandiri (tidak butuh penutup). Wajib menyertakan <code>src</code> (sumber berkas) dan <code>alt</code> (teks alternatif jika gambar gagal dimuat).</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;img src="https://picsum.photos/100" 
+     alt="Contoh Gambar Acak" 
+     style="border-radius: 8px; width:60px;"&gt;
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl flex justify-center">
+                            <img src="https://picsum.photos/100" alt="Contoh Gambar Acak" class="rounded-lg w-[60px] h-[60px] object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KELOMPOK 4: LISTS & TABLES -->
+        <section id="kelompok-list" class="space-y-6">
+            <div class="border-b border-slate-200 pb-3">
+                <h3 class="text-2xl font-bold text-slate-800">4. List, Daftar Terstruktur & Representasi Data</h3>
+                <p class="text-slate-500 text-sm">Menampilkan urutan informasi dan tabulasi data matriks secara rapi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Element Card: LISTS -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Daftar Berpoin & Berurutan</h4>
+                            <p class="text-slate-500 text-xs mt-1"><code>&lt;ul&gt;</code> membuat poin simbol bundar (bullet). <code>&lt;ol&gt;</code> membuat daftar angka urut (1, 2, 3). Setiap item wajib dibungkus tag <code>&lt;li&gt;</code>.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;ul&gt;
+  &lt;li&gt;HTML5&lt;/li&gt;
+  &lt;li&gt;CSS3&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-xs">
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Element Card: TABLES -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Tabel Data Matriks</h4>
+                            <p class="text-slate-500 text-xs mt-1">Struktur tabel lengkap. <code>&lt;tr&gt;</code> baris baru, <code>&lt;th&gt;</code> kolom judul (tebal & rata tengah), dan <code>&lt;td&gt;</code> adalah sel data reguler.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Tekno&lt;/th&gt;
+    &lt;td&gt;PHP&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-xs">
+                            <table class="w-full border-collapse border border-slate-300">
+                                <tr>
+                                    <th class="border border-slate-300 bg-slate-100 p-1 text-left font-bold">Tekno</th>
+                                    <td class="border border-slate-300 p-1">PHP Native</td>
+                                </tr>
+                                <tr>
+                                    <th class="border border-slate-300 bg-slate-100 p-1 text-left font-bold">Web</th>
+                                    <td class="border border-slate-300 p-1">HTML5</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KELOMPOK 5: FORM & INPUT -->
+        <section id="kelompok-form" class="space-y-6">
+            <div class="border-b border-slate-200 pb-3">
+                <h3 class="text-2xl font-bold text-slate-800">5. Formulir & Masukan Pengguna</h3>
+                <p class="text-slate-500 text-sm">Elemen penangkap input user guna dikirimkan ke backend server (seperti program PHP-mu!).</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Element Card: TEXT INPUTS -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;input type="text"&gt;, &lt;label&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Boks Input Teks & Label</h4>
+                            <p class="text-slate-500 text-xs mt-1">Mengambil input satu baris karakter dari user. Selalu hubungkan dengan tag <code>&lt;label&gt;</code> menggunakan kecocokan atribut <code>for</code> dan <code>id</code>.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;label for="username"&gt;Nama:&lt;/label&gt;
+&lt;input type="text" id="username" 
+       placeholder="Masukkan nama..."&gt;
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-xs space-y-1">
+                            <label for="usr-ex" class="block font-bold text-slate-700">Nama:</label>
+                            <input type="text" id="usr-ex" placeholder="Masukkan nama..." class="w-full p-1.5 border border-slate-300 rounded focus:ring-1 focus:ring-indigo-500 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Element Card: RADIO & CHECKBOX -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Radio & Checkbox</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Pilihan Tunggal & Ganda</h4>
+                            <p class="text-slate-500 text-xs mt-1"><code>type="radio"</code> memaksa user hanya boleh memilih satu opsi dari kelompok yang sama. <code>type="checkbox"</code> membebaskan pemilihan banyak opsi.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;input type="radio" name="g" id="p"&gt; Pria
+&lt;input type="checkbox" id="c1"&gt; Setuju
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-xs space-y-2">
+                            <div>
+                                <span class="font-bold block mb-1">Gender:</span>
+                                <label class="inline-flex items-center mr-3"><input type="radio" name="g" class="mr-1"> Pria</label>
+                                <label class="inline-flex items-center"><input type="radio" name="g" class="mr-1"> Wanita</label>
+                            </div>
+                            <hr class="border-slate-100">
+                            <div>
+                                <label class="inline-flex items-center"><input type="checkbox" class="mr-1"> Langganan Newsletter</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Element Card: SELECT & BUTTON -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;select&gt;, &lt;button&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Dropdown Opsi & Tombol Aksi</h4>
+                            <p class="text-slate-500 text-xs mt-1"><code>&lt;select&gt;</code> membuat menu tarik-turun berisi beberapa tag <code>&lt;option&gt;</code>. <code>&lt;button&gt;</code> menjalankan aksi submit data ke server.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;select&gt;
+  &lt;option&gt;PHP&lt;/option&gt;
+  &lt;option&gt;HTML&lt;/option&gt;
+&lt;/select&gt;
+&lt;button type="submit"&gt;Kirim&lt;/button>
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-xs space-y-2">
+                            <select class="w-full p-1 border border-slate-300 rounded outline-none">
+                                <option>PHP (Native Developer)</option>
+                                <option>HTML5 Expert</option>
+                            </select>
+                            <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold p-1.5 rounded transition">Kirim Form</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KELOMPOK 6: SEMANTIK & LAYOUT -->
+        <section id="kelompok-semantik" class="space-y-6">
+            <div class="border-b border-slate-200 pb-3">
+                <h3 class="text-2xl font-bold text-slate-800">6. Tata Letak Semantik & Kontainer</h3>
+                <p class="text-slate-500 text-sm">Tag modern HTML5 untuk mendefinisikan layout agar rapi dan dimengerti mesin pencari (SEO).</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Element Card: MODERN SEMANTIC -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Semantik HTML5</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Kerangka Semantik Situs</h4>
+                            <p class="text-slate-500 text-xs mt-1">Menggantikan penggunaan massal tag <code>&lt;div&gt;</code>. Contohnya: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, dan <code>&lt;footer&gt;</code>.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;header&gt;Kepala Web&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;Konten Blog&lt;/article&gt;
+&lt;/main&gt;
+&lt;footer&gt;Kaki Web&lt;/footer&gt;
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-2 bg-white border border-slate-200 rounded-xl text-[10px] space-y-1 font-semibold text-center">
+                            <header class="bg-slate-700 text-white p-1 rounded">HEADER</header>
+                            <main class="bg-slate-100 p-2 rounded space-y-1">
+                                <span class="text-[9px] text-slate-400 block">MAIN CONTENT</span>
+                                <article class="bg-white border border-slate-300 p-1 rounded">ARTICLE</article>
+                            </main>
+                            <footer class="bg-slate-800 text-slate-300 p-1 rounded">FOOTER</footer>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Element Card: DIV vs SPAN -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+                    <div class="p-5 lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-100">
+                        <div>
+                            <span class="bg-indigo-50 text-indigo-700 font-bold px-2.5 py-1 rounded text-xs tracking-wider uppercase">&lt;div&gt; vs &lt;span&gt;</span>
+                            <h4 class="text-lg font-extrabold text-slate-900 mt-2">Block vs Inline Container</h4>
+                            <p class="text-slate-500 text-xs mt-1"><code>&lt;div&gt;</code> bersifat *block-level* (membuat blok kotak penuh baru ke bawah). <code>&lt;span&gt;</code> bersifat *inline-level* (hanya membungkus teks tertentu dalam baris yang sama).</p>
+                        </div>
+                    </div>
+                    <div class="p-4 lg:col-span-5 bg-slate-900 text-slate-300 code-font text-xs flex flex-col justify-center overflow-x-auto">
+                        <span class="text-slate-500 text-[10px] uppercase font-bold mb-1">Source Code:</span>
+<pre class="text-emerald-400">
+&lt;div style="background: yellow;"&gt;Kotak Div&lt;/div&gt;
+Ini adalah teks &lt;span style="color: red;"&gt;berwarna merah&lt;/span&gt;.
+</pre>
+                    </div>
+                    <div class="p-5 lg:col-span-3 bg-slate-50 flex flex-col justify-center">
+                        <span class="text-slate-400 text-[10px] uppercase font-bold mb-2">Live Render:</span>
+                        <div class="p-3 bg-white border border-slate-200 rounded-xl text-xs space-y-2">
+                            <div class="bg-yellow-100 border border-yellow-300 p-1 rounded text-yellow-800 font-semibold">Kotak Div (Block)</div>
+                            <p>Ini adalah teks <span class="text-red-600 font-bold">berwarna merah (Inline Span)</span> dalam satu baris.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-500 text-center py-8 border-t border-slate-900 text-xs mt-12">
+        <p>&copy; 2026 Developer Toolkit - Dibuat spesial untuk Dian dan Kawan-kawan.</p>
+        <p class="mt-1 text-slate-600">Semangat belajar coding HTML modern!</p>
+    </footer>
+
+</body>
+</html>
+
+```
